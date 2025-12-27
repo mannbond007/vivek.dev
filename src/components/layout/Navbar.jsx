@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Code2, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import ResumeButton from "../sections/ResumeButton";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -14,44 +15,36 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
-      {/* Glass Bar */}
+      {/* Glass Navbar */}
       <div className="relative bg-black/50 backdrop-blur-xl border-b border-white/10">
         {/* subtle glow line */}
         <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div
+          {/* Logo (Linux Terminal Style) */}
+          <a href="#" className="group">
+            <span
               className="
-                w-9 h-9
-                flex items-center justify-center
-                rounded-xl
-                bg-primary/15
-                border border-primary/30
-                group-hover:bg-primary/25
-                transition
+                font-mono text-lg md:text-xl font-semibold
+                text-gray-300
+                tracking-wider
+                transition-colors duration-300
+                group-hover:text-white
               "
             >
-              <Code2 className="w-5 h-5 text-primary" />
-            </div>
-
-            <span className="text-white font-semibold text-lg tracking-wide">
-              <span className="text-primary">&lt;</span>
-              Vivek
-              <span className="text-primary">/&gt;</span>
+             <span className="text-primary ">$</span> Vivek_
             </span>
           </a>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-10">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 className="
-                  relative text-sm font-medium text-white/70
+                  relative text-lg font-medium text-white/70
                   hover:text-white transition
                   after:absolute after:-bottom-1 after:left-0
                   after:h-[2px] after:w-0
@@ -65,8 +58,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA (WHITE BUTTON) */}
-          <div className="hidden md:block">
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <ResumeButton />
+
             <a
               href="#contact"
               className="
@@ -97,26 +92,27 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={`
-          md:hidden
-          overflow-hidden
+          md:hidden overflow-hidden 
           transition-all duration-300 ease-in-out
-          ${open ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"}
+          ${open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
         `}
       >
-        <div
-          className="
-            bg-black/90 backdrop-blur-xl
-            border-t border-white/10
-            px-6 py-6
-            space-y-4
-          "
-        >
+        <div className="bg-black/90  backdrop-blur-xl border-t border-white/10 px-6 py-6 space-y-4">
+          
+          {/* Mobile Resume Button (SAME STYLE) */}
+          <ResumeButton
+            fullWidth
+            onClick={() => setOpen(false)}
+          />
+
+          {/* Mobile Nav Links */}
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
               className="
+              mt-6
                 block text-white/80
                 text-base font-medium
                 hover:text-white
@@ -127,13 +123,13 @@ const Navbar = () => {
             </a>
           ))}
 
-          {/* Mobile CTA (WHITE BUTTON) */}
+          {/* Mobile Hire Me */}
           <a
             href="#contact"
             onClick={() => setOpen(false)}
             className="
               block w-full text-center
-              mt-4 px-6 py-3
+              mt-2 px-6 py-3
               rounded-xl
               bg-white text-black
               font-medium

@@ -8,9 +8,10 @@ import {
   SiNodedotjs,
   SiMongodb,
 } from "react-icons/si";
-import { ChevronsLeftRightEllipsis, Code2, Star } from "lucide-react";
+import { ChevronsLeftRightEllipsis } from "lucide-react";
 import { scrollToSection } from "../../hooks/useScrollSpy";
 import RadialGradientBackground from "../../constants/background/RadialGradientBackground";
+import TypingTech from "./TypingTech";
 
 const Hero = () => {
   return (
@@ -22,19 +23,58 @@ const Hero = () => {
           {/* LEFT COLUMN */}
           <div>
             <FadeIn delay={0}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full border border-primary/30 bg-primary/10">
-                 {/* <Code2 className="w-4 h-4 text-primary" /> */}
-                 <ChevronsLeftRightEllipsis className="w-6 h-6 text-primary" />
-                <span className="text-xs tracking-wider text-white/90 uppercase">
-                  Full-Stack Developer • Crafting Modern Web Experiences
+              <div
+                className="
+      inline-flex items-start sm:items-center
+      gap-2 sm:gap-3
+      px-3 py-2 sm:px-4 sm:py-2.5
+      mb-6 sm:mb-8
+      rounded-full
+      bg-white/5
+      border border-white/10
+      backdrop-blur-md
+      max-w-full
+    "
+              >
+                {/* Icon */}
+                <div
+                  className="
+        w-5 h-5 sm:w-6 sm:h-6
+        flex items-center justify-center
+        rounded-full
+        bg-white/10
+        text-primary
+        text-xs sm:text-sm
+        flex-shrink-0
+        mt-[2px] sm:mt-0
+      "
+                >
+                  ❮❯
+                </div>
+
+                {/* Text */}
+                <span
+                  className="
+        text-xs sm:text-sm
+        tracking-wide
+        text-white/80
+        uppercase
+        leading-snug
+        max-w-[280px] sm:max-w-none
+      "
+                >
+                  Full-Stack Developer • Crafting modern web with&nbsp;
+                  <span className="inline-block">
+                    <TypingTech />
+                  </span>
                 </span>
               </div>
             </FadeIn>
 
             <FadeIn delay={100}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-                Crafting modern <br />
-                <span className="text-primary">React applications</span>
+                Crafting modern and{" "}
+                <span className="text-primary">Scalable Applications</span>
               </h1>
             </FadeIn>
 
@@ -74,7 +114,6 @@ const Hero = () => {
           {/* RIGHT COLUMN */}
           <FadeIn delay={200}>
             <div className="relative flex justify-center lg:justify-end w-full">
-              {/* THEME MATCHED CARD */}
               <div
                 className="
                   bg-primary/10
@@ -86,20 +125,15 @@ const Hero = () => {
                   w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px]
                 "
               >
-                {/* IMAGE */}
                 <div className="relative w-full h-[360px] sm:h-[420px] md:h-[480px] rounded-2xl overflow-hidden">
-                  {/* Image */}
                   <img
-                    src="./main.jpg"
+                    src="./main3.png"
                     alt="Developer"
                     className="w-full h-full object-cover"
                   />
-
-                  {/* Dark Overlay */}
                   <div className="absolute inset-0 bg-black/40" />
                 </div>
 
-                {/* TECH STACK */}
                 <div className="flex justify-center flex-wrap gap-4 mt-6">
                   {[
                     { Icon: SiReact, color: "text-cyan-400" },
