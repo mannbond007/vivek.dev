@@ -1,3 +1,4 @@
+import { MessageSquareQuote } from "lucide-react";
 import React from "react";
 
 const testimonials = [
@@ -85,19 +86,20 @@ const Testimonials = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <span
-            className="
-              inline-flex items-center
-              px-6 py-2
-              text-sm md:text-base
-              tracking-widest uppercase
-              text-primary
-              bg-primary/10
-              border border-primary/30
-              rounded-full
-            "
-          >
-            Testimonials
-          </span>
+  className="
+    inline-flex items-center gap-2
+    px-6 py-2
+    text-sm md:text-base
+    tracking-widest uppercase
+    text-primary
+    bg-primary/10
+    border border-primary/30
+    rounded-full
+  "
+>
+  <MessageSquareQuote className="w-4 h-4 md:w-5 md:h-5" />
+  Testimonials
+</span>
 
           <h2 className="text-3xl md:text-4xl text-white mt-6 font-medium">
             Trusted by people I’ve worked with

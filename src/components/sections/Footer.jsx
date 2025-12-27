@@ -1,32 +1,31 @@
 import React from "react";
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Mail,
-  Code,
-} from "lucide-react";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="relative bg-black border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-16">
-
+        
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-
+          
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 text-white text-xl font-semibold mb-4">
-              <Code className="w-5 h-5 text-primary" />
-              <span>
-                <span className="text-primary">&lt;</span>
-                Vivek
-                <span className="text-primary">/&gt;</span>
-              </span>
-            </div>
+            <a href="#" className="group">
+            <span
+              className="
+                font-mono text-lg md:text-xl font-semibold
+                text-gray-300
+                tracking-wider
+                transition-colors duration-300
+                group-hover:text-white
+              "
+            >
+             <span className="text-primary ">$</span> Vivek_
+            </span>
+          </a>
 
-            <p className="text-white/60 text-sm leading-relaxed max-w-sm">
+            <p className="text-white/60 mt-2 text-sm leading-relaxed max-w-sm">
               Full-stack developer crafting modern, scalable, and meaningful
               digital experiences with a strong focus on usability and clarity.
             </p>
@@ -34,9 +33,7 @@ const Footer = () => {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-white font-medium mb-4">
-              Navigation
-            </h4>
+            <h4 className="text-white font-medium mb-4">Navigation</h4>
 
             <ul className="space-y-3 text-sm">
               {[
@@ -50,17 +47,13 @@ const Footer = () => {
                   <a
                     href={link.href}
                     className="
-                      group
-                      relative
-                      inline-block
+                      group relative inline-block
                       text-white/60
                       transition
                       hover:text-white
                     "
                   >
                     {link.label}
-
-                    {/* Hover underline */}
                     <span
                       className="
                         absolute left-0 -bottom-1
@@ -78,9 +71,7 @@ const Footer = () => {
 
           {/* Social */}
           <div>
-            <h4 className="text-white font-medium mb-4">
-              Connect
-            </h4>
+            <h4 className="text-white font-medium mb-4">Connect</h4>
 
             <div className="flex items-center gap-4">
               {[
@@ -111,7 +102,6 @@ const Footer = () => {
               ))}
             </div>
           </div>
-
         </div>
 
         {/* Divider */}
@@ -119,15 +109,11 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
-          <span>
-            © {new Date().getFullYear()} Vivek. All rights reserved.
-          </span>
-
+          <span>© {new Date().getFullYear()} Vivek. All rights reserved.</span>
           <span className="text-center md:text-right">
             Designed with intent. Built for real-world impact.
           </span>
         </div>
-
       </div>
     </footer>
   );

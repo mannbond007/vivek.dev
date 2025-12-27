@@ -1,4 +1,4 @@
-import React from "react";
+
 import FadeIn from "../animations/FadeIn";
 import {
   Code2,
@@ -6,6 +6,7 @@ import {
   Server,
   GraduationCap,
   CheckCircle,
+  TrendingUp,
 } from "lucide-react";
 import {
   SiReact,
@@ -70,11 +71,11 @@ const Experience = () => {
   return (
     <section id="experience" className="relative bg-black py-28">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* Header */}
         <FadeIn delay={0}>
           <div className="mb-20 text-center">
-            <span className="inline-flex items-center px-6 py-2 text-sm md:text-base tracking-widest uppercase text-primary bg-primary/15 border border-primary/30 rounded-full">
+            <span className="inline-flex items-center gap-2 px-6 py-2 text-sm md:text-base tracking-widest uppercase text-primary bg-primary/15 border border-primary/30 rounded-full">
+              <TrendingUp className="w-4 h-4 md:w-5 md:h-5" />
               Experience
             </span>
 
@@ -83,8 +84,8 @@ const Experience = () => {
             </h2>
 
             <p className="text-white/75 max-w-xl mx-auto mt-4 text-sm md:text-base">
-              A clear timeline highlighting my growth, responsibilities,
-              and real-world development experience.
+              A clear timeline highlighting my growth, responsibilities, and
+              real-world development experience.
             </p>
           </div>
         </FadeIn>
@@ -100,7 +101,6 @@ const Experience = () => {
               return (
                 <FadeIn key={index} delay={100 + index * 100}>
                   <div className="relative md:pl-20">
-
                     {/* Timeline Icon */}
                     <div className="hidden md:flex absolute left-0 top-8 w-14 h-14 items-center justify-center rounded-full bg-primary/20 border border-primary/40 backdrop-blur-xl shadow-[0_0_30px_rgba(99,102,241,0.35)]">
                       <Icon className="w-6 h-6 text-primary" />
@@ -113,9 +113,7 @@ const Experience = () => {
                           <h3 className="text-white text-lg md:text-xl font-semibold">
                             {exp.role}
                           </h3>
-                          <p className="text-white/80 text-sm">
-                            {exp.company}
-                          </p>
+                          <p className="text-white/80 text-sm">{exp.company}</p>
                         </div>
 
                         <span className="text-white/60 text-sm mt-2 md:mt-0">
@@ -144,7 +142,6 @@ const Experience = () => {
                           </div>
                         ))}
                       </div>
-
                     </div>
                   </div>
                 </FadeIn>
@@ -152,7 +149,6 @@ const Experience = () => {
             })}
           </div>
         </div>
-
       </div>
     </section>
   );

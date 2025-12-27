@@ -7,6 +7,7 @@ import {
   ShieldCheck,
   Rocket,
   Palette,
+  Wrench,
 } from "lucide-react";
 
 const services = [
@@ -51,19 +52,21 @@ const Services = () => {
         <FadeIn delay={0}>
           <div className="mb-20 text-center">
             <span
-              className="
-                inline-flex items-center
-                px-6 py-2
-                text-sm md:text-base
-                tracking-widest uppercase
-                text-primary
-                bg-primary/10
-                border border-primary/30
-                rounded-full
-              "
-            >
-              Services
-            </span>
+  className="
+    inline-flex items-center gap-2
+    px-6 py-2
+    text-sm md:text-base
+    tracking-widest uppercase
+    text-primary
+    bg-primary/10
+    border border-primary/30
+    rounded-full
+  "
+>
+  <Wrench className="w-4 h-4 md:w-5 md:h-5" />
+  Services
+</span>
+
 
             <h2 className="text-3xl md:text-4xl text-white mt-6 font-medium">
               What I can help you build

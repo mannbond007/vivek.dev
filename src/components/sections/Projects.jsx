@@ -1,26 +1,28 @@
 import React from "react";
 import FadeIn from "../animations/FadeIn";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Folder, FolderGit2, Github } from "lucide-react";
 import projects from "../../constants/projects";
 
 const Projects = () => {
   return (
     <section id="projects" className="bg-black py-28">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* Header */}
         <FadeIn delay={0}>
           <div className="mb-20 text-center">
-            <span className="
-              inline-flex items-center
-              px-6 py-2
-              text-sm md:text-base
-              tracking-widest uppercase
-              text-primary
-              bg-primary/10
-              border border-primary/30
-              rounded-full
-            ">
+            <span
+              className="
+    inline-flex items-center gap-2
+    px-6 py-2
+    text-sm md:text-base
+    tracking-widest uppercase
+    text-primary
+    bg-primary/10
+    border border-primary/30
+    rounded-full
+  "
+            >
+              <Folder className="w-4 h-4 md:w-5 md:h-5" />
               Projects
             </span>
 
@@ -29,7 +31,8 @@ const Projects = () => {
             </h2>
 
             <p className="text-white/60 max-w-xl mx-auto mt-4">
-              Real-world applications built with performance, scalability, and clean UI.
+              Real-world applications built with performance, scalability, and
+              clean UI.
             </p>
           </div>
         </FadeIn>
@@ -53,13 +56,15 @@ const Projects = () => {
               >
                 {/* Image Wrapper */}
                 <div className="p-5">
-                  <div className="
+                  <div
+                    className="
                     relative
                     h-64
                     rounded-2xl
                     overflow-hidden
                     border border-primary/25
-                  ">
+                  "
+                  >
                     <img
                       src={project.image}
                       alt={project.title}
@@ -152,7 +157,6 @@ const Projects = () => {
             ))}
           </div>
         </FadeIn>
-
       </div>
     </section>
   );

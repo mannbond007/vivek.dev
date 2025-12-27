@@ -1,4 +1,5 @@
 // src/constants/projects.js
+import mern from "../assets/mern.png"
 import {
   SiReact,
   SiNextdotjs,
@@ -7,24 +8,28 @@ import {
   SiMongodb,
   SiMysql,
   SiJavascript,
+  SiExpress,
+  SiJsonwebtokens,
 } from "react-icons/si";
 
 const projects = [
   {
-    title: "Weather App",
-    description:
-      "A real-time weather forecasting web application using OpenWeatherMap API with clean UI and responsive design.",
-    image: "/projects/weather.png",
-    githubUrl: "https://github.com/yourname/weather-app",
-    liveUrl: "https://weather-app-demo.com",
-    techStack: [
-      { label: "React", icon: SiReact },
-      { label: "JavaScript", icon: SiJavascript },
-      { label: "API", icon: SiNodedotjs },
-      { label: "Tailwind", icon: SiTailwindcss },
-    ],
+  title: "MERN Authentication System",
+  description:
+    "A full-feature authentication system with secure user registration, login, JWT-based authentication, email verification, password reset, and role-based access control.",
+  image: mern,
+  githubUrl: "https://github.com/yourname/mern-auth-system",
+  liveUrl: "https://mern-auth-demo.com",
+  techStack: [
+    { label: "React", icon: SiReact },
+    { label: "Node.js", icon: SiNodedotjs },
+    { label: "Express", icon: SiExpress },
+    { label: "MongoDB", icon: SiMongodb },
+    { label: "JWT", icon: SiJsonwebtokens },
+    { label: "Tailwind CSS", icon: SiTailwindcss },
+  ],
   },
-  {
+ {
     title: "MERN Auth System",
     description:
       "A secure authentication system with JWT, role-based access control, and email verification.",

@@ -14,7 +14,6 @@ const Contact = () => {
   return (
     <section id="contact" className="relative bg-black py-28 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6">
-
         {/* Header */}
         <FadeIn delay={0}>
           <div className="mb-20 text-center">
@@ -39,15 +38,14 @@ const Contact = () => {
             </h2>
 
             <p className="text-white/60 max-w-xl mx-auto mt-4">
-              Have a project, idea, or opportunity? I’m always open to meaningful
-              conversations and collaborations.
+              Have a project, idea, or opportunity? I’m always open to
+              meaningful conversations and collaborations.
             </p>
           </div>
         </FadeIn>
 
         {/* Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-
           {/* LEFT COLUMN */}
           <FadeIn delay={100}>
             <div>
@@ -56,9 +54,9 @@ const Contact = () => {
               </h3>
 
               <p className="text-white/70 leading-relaxed mb-8">
-                I’m open to full-time roles, freelance projects, and collaborations.
-                Whether you’re building something new or improving an existing
-                product — feel free to reach out.
+                I’m open to full-time roles, freelance projects, and
+                collaborations. Whether you’re building something new or
+                improving an existing product — feel free to reach out.
               </p>
 
               {/* Contact Info */}
@@ -68,7 +66,7 @@ const Contact = () => {
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <span className="text-white/80">
-                    vivek.dev@email.com
+                    vivekkumargzp233001@gmail.com
                   </span>
                 </div>
 
@@ -77,7 +75,9 @@ const Contact = () => {
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <span className="text-white/80">
-                    +91 9XXXXXXXXX
+                    +91 6387234233
+                    <span className="mx-3 text-primary">|</span>
+                    +91 7266840582
                   </span>
                 </div>
               </div>
@@ -85,9 +85,21 @@ const Contact = () => {
               {/* Social Links */}
               <div className="flex items-center gap-4 mt-10">
                 {[
-                  { Icon: Github, href: "https://github.com/", label: "GitHub" },
-                  { Icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
-                  { Icon: Twitter, href: "https://twitter.com/", label: "Twitter" },
+                  {
+                    Icon: Github,
+                    href: "https://github.com/",
+                    label: "GitHub",
+                  },
+                  {
+                    Icon: Linkedin,
+                    href: "https://linkedin.com/",
+                    label: "LinkedIn",
+                  },
+                  {
+                    Icon: Twitter,
+                    href: "https://twitter.com/",
+                    label: "Twitter",
+                  },
                 ].map(({ Icon, href, label }, i) => (
                   <a
                     key={i}
@@ -195,7 +207,6 @@ const Contact = () => {
               </div>
             </form>
           </FadeIn>
-
         </div>
       </div>
     </section>

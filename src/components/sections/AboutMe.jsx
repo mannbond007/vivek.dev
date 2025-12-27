@@ -1,64 +1,70 @@
 import React from "react";
 import FadeIn from "../animations/FadeIn";
+
 import frontEnd from "../../assets/fe.jpg";
 import react from "../../assets/react.png";
 import ux from "../../assets/ux.jpg";
-// import backend from "../../assets/backend.jpg";
-import backend1 from "../../assets/971.jpg";
 import db from "../../assets/db.png";
 import git from "../../assets/git.png";
 import expres from "../../assets/express.png";
-import fullstack from "../../assets/fullstack.png";
 import fs from "../../assets/fs.png";
-import { Code2, Palette, Cpu, Database, Layers, GitBranch } from "lucide-react";
+
+import {
+  Code2,
+  Palette,
+  Cpu,
+  Database,
+  Layers,
+  GitBranch,
+} from "lucide-react";
 
 const items = [
   {
     title: "Frontend Engineering",
     desc: "Building responsive, accessible, and modern user interfaces using React, Next.js, and Tailwind CSS.",
-    icon: <Palette className="w-5 h-5 text-primary" />,
+    icons: [Palette, Layers],
     col: "lg:col-span-1",
     image: frontEnd,
   },
   {
     title: "React & Next.js",
     desc: "Component-driven applications with optimized rendering, clean state management, and scalability in mind.",
-    icon: <Layers className="w-5 h-5 text-primary" />,
+    icons: [Layers, Code2],
     col: "lg:col-span-1",
     image: react,
   },
   {
     title: "UI / UX Focus",
     desc: "Designing interfaces that balance aesthetics, usability, accessibility, and performance.",
-    icon: <Palette className="w-5 h-5 text-primary" />,
+    icons: [Palette, Layers],
     col: "lg:col-span-1",
     image: ux,
   },
   {
     title: "Backend Development",
     desc: "Secure, scalable REST APIs using Node.js and Express with clean architecture principles.",
-    icon: <Cpu className="w-5 h-5 text-primary" />,
+    icons: [Cpu, Code2],
     col: "lg:col-span-2",
     image: expres,
   },
   {
     title: "Databases & Data Modeling",
     desc: "Designing efficient schemas and managing structured and unstructured data using MongoDB and SQL.",
-    icon: <Database className="w-5 h-5 text-primary" />,
+    icons: [Database, Layers],
     col: "lg:col-span-1",
     image: db,
   },
   {
     title: "Version Control & Collaboration",
     desc: "Professional Git workflows with GitHub — clean commits, collaboration, and maintainable codebases.",
-    icon: <GitBranch className="w-5 h-5 text-primary" />,
+    icons: [GitBranch, Code2],
     col: "lg:col-span-1",
     image: git,
   },
   {
     title: "Full-Stack Project Ownership",
     desc: "End-to-end development covering UI, backend logic, APIs, and database integration.",
-    icon: <Code2 className="w-5 h-5 text-primary" />,
+    icons: [Layers, Cpu, Database],
     col: "lg:col-span-2",
     image: fs,
   },
@@ -68,20 +74,21 @@ const AboutMe = () => {
   return (
     <section className="relative bg-black py-28">
       <div className="max-w-7xl mx-auto px-6">
+
         {/* Header */}
         <FadeIn delay={0}>
           <div className="mb-20 text-center max-w-3xl mx-auto">
             <span
               className="
-    inline-flex items-center gap-2
-    px-6 py-2
-    text-sm md:text-base
-    tracking-widest uppercase
-    text-primary
-    bg-primary/10
-    border border-primary/30
-    rounded-full
-  "
+                inline-flex items-center gap-2
+                px-6 py-2
+                text-sm md:text-base
+                tracking-widest uppercase
+                text-primary
+                bg-primary/10
+                border border-primary/30
+                rounded-full
+              "
             >
               <Layers className="w-4 h-4 md:w-5 md:h-5" />
               What I Work With
@@ -100,7 +107,7 @@ const AboutMe = () => {
           </div>
         </FadeIn>
 
-        {/* Bento Grid */}
+        {/* Cards */}
         <FadeIn delay={100}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {items.map((item, i) => (
@@ -125,19 +132,22 @@ const AboutMe = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 </div>
 
-                {/* Icon */}
-                <div className="mb-4">
-                  <div
-                    className="
-                      w-11 h-11
-                      flex items-center justify-center
-                      rounded-full
-                      bg-primary/20
-                      border border-primary/30
-                    "
-                  >
-                    {item.icon}
-                  </div>
+                {/* Icons (THIS IS THE IMPORTANT PART) */}
+                <div className="mb-4 flex items-center gap-2">
+                  {item.icons.map((Icon, idx) => (
+                    <div
+                      key={idx}
+                      className="
+                        w-11 h-11
+                        flex items-center justify-center
+                        rounded-full
+                        bg-primary/20
+                        border border-primary/30
+                      "
+                    >
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                  ))}
                 </div>
 
                 {/* Text */}

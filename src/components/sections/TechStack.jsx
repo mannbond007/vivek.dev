@@ -1,3 +1,4 @@
+import { Boxes } from "lucide-react";
 import React from "react";
 import {
   SiReact,
@@ -42,19 +43,21 @@ const TechStack = () => {
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
         <span
-          className="
-            inline-flex items-center
-            px-6 py-2
-            text-sm md:text-base
-            tracking-widest uppercase
-            text-primary
-            bg-primary/10
-            border border-primary/30
-            rounded-full
-          "
-        >
-          Tech Stack
-        </span>
+  className="
+    inline-flex items-center gap-2
+    px-6 py-2
+    text-sm md:text-base
+    tracking-widest uppercase
+    text-primary
+    bg-primary/10
+    border border-primary/30
+    rounded-full
+  "
+>
+  <Boxes className="w-4 h-4 md:w-5 md:h-5" />
+  Tech Stack
+</span>
+
 
         <h2 className="text-3xl md:text-4xl text-white mt-6 font-medium">
           Technologies I work with
