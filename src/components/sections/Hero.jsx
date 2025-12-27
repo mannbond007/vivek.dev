@@ -72,11 +72,11 @@ const Hero = () => {
             </FadeIn>
 
             <FadeIn delay={100}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-                Crafting modern and
-                <br className="block sm:hidden" />
-                <span className="text-primary">Scalable Applications</span>
-              </h1>
+             <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+  Crafting modern and{" "}
+  <span className="text-primary">Scalable Applications</span>
+</h1>
+
             </FadeIn>
 
             <FadeIn delay={200}>
