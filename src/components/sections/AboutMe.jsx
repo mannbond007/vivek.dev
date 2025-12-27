@@ -84,19 +84,21 @@ const AboutMe = () => {
         <FadeIn delay={0}>
           <div className="mb-20 text-center max-w-3xl mx-auto">
             <span
-              className="
-                inline-flex items-center
-                px-6 py-2
-                text-sm md:text-base
-                tracking-widest uppercase
-                text-primary
-                bg-primary/10
-                border border-primary/30
-                rounded-full
-              "
-            >
-              What I Work With
-            </span>
+  className="
+    inline-flex items-center gap-2
+    px-6 py-2
+    text-sm md:text-base
+    tracking-widest uppercase
+    text-primary
+    bg-primary/10
+    border border-primary/30
+    rounded-full
+  "
+>
+  <Layers className="w-4 h-4 md:w-5 md:h-5" />
+  What I Work With
+</span>
+
 
             <h2 className="text-3xl md:text-4xl text-white mt-6 font-medium">
               Technical expertise & focus areas
