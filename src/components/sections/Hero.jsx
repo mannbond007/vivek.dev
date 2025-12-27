@@ -72,19 +72,43 @@ const Hero = () => {
             </FadeIn>
 
             <FadeIn delay={100}>
-             <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-  Crafting modern and{" "}
-  <span className="text-primary">Scalable Applications</span>
-</h1>
-
+              <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+                Crafting modern and{" "}
+                <span className="text-primary">Scalable Applications</span>
+              </h1>
             </FadeIn>
 
             <FadeIn delay={200}>
-              <p className="text-white/70 text-lg max-w-xl mb-10">
-                I build high-performance, scalable web applications using React,
-                Next.js and modern backend technologies — focused on clean UI
-                and real-world usability.
-              </p>
+             <p className="text-white/70 text-lg max-w-xl mb-10 leading-relaxed">
+  I build{" "}
+  <span className="text-white/90 font-medium">
+    scalable, high-performance
+  </span>{" "}
+  web applications with{" "}
+  <span className="relative font-medium text-primary">
+    React
+    <span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-primary/40 rounded"></span>
+  </span>
+  ,{" "}
+  <span className="relative font-medium text-primary">
+    Next.js
+    <span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-primary/40 rounded"></span>
+  </span>{" "}
+  and{" "}
+  <span className="relative font-medium text-primary">
+    modern backend technologies
+    <span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-primary/40 rounded"></span>
+  </span>
+  , focusing on{" "}
+  <span className="text-white/90 font-medium">
+    clean interfaces
+  </span>{" "}
+  and{" "}
+  <span className="text-white/90 font-medium">
+    real-world usability
+  </span>.
+</p>
+
             </FadeIn>
 
             <FadeIn delay={300}>
