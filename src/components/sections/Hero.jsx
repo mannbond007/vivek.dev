@@ -1,17 +1,10 @@
 import React from "react";
 import FadeIn from "../animations/FadeIn";
-import { PERSONAL_INFO, STATS } from "../../utils/constants";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiMongodb,
-} from "react-icons/si";
-import { ChevronsLeftRightEllipsis } from "lucide-react";
+import { STATS } from "../../utils/constants";
 import { scrollToSection } from "../../hooks/useScrollSpy";
 import RadialGradientBackground from "../../constants/background/RadialGradientBackground";
 import TypingTech from "./TypingTech";
+import HeroImageCard from "./HeroImageCard";
 
 const Hero = () => {
   return (
@@ -20,106 +13,64 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* LEFT COLUMN */}
+
+          {/* LEFT */}
           <div>
             <FadeIn delay={0}>
-              <div
-                className="
-      inline-flex items-start sm:items-center
-      gap-2 sm:gap-3
-      px-3 py-2 sm:px-4 sm:py-2.5
-      mb-6 sm:mb-8
-      rounded-full
-      bg-white/5
-      border border-white/10
-      backdrop-blur-md
-      max-w-full
-    "
-              >
-                {/* Icon */}
-                <div
-                  className="
-        w-5 h-5 sm:w-6 sm:h-6
-        flex items-center justify-center
-        rounded-full
-        bg-white/10
-        text-primary
-        text-xs sm:text-sm
-        flex-shrink-0
-        mt-[2px] sm:mt-0
-      "
-                >
+              <div className="inline-flex items-center gap-3 px-4 py-2 mb-8 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+                <span className="w-6 h-6 flex items-center justify-center rounded-full bg-white/10 text-primary text-sm">
                   ❮❯
-                </div>
-
-                {/* Text */}
-                <span
-                  className="
-        text-xs sm:text-sm
-        tracking-wide
-        text-white/80
-        uppercase
-        leading-snug
-        max-w-[280px] sm:max-w-none
-      "
-                >
-                  Full-Stack Developer • Crafting modern web with&nbsp;
-                  <span className="inline-block">
-                    <TypingTech />
-                  </span>
+                </span>
+                <span className="text-sm tracking-wide text-white/80 uppercase">
+                  Full-Stack Developer • <TypingTech />
                 </span>
               </div>
             </FadeIn>
 
             <FadeIn delay={100}>
-              <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-                Crafting modern and{" "}
-                <span className="text-primary">Scalable Applications</span>
+              <h1 className="text-[36px] sm:text-5xl lg:text-6xl font-semibold text-white leading-tight mb-6">
+                Building{" "}
+                <span className="text-primary">Production-Ready</span>{" "}
+                Web Products
+                <br />
+                <span className="text-white/60 text-3xl">
+                  not just side projects
+                </span>
               </h1>
             </FadeIn>
 
             <FadeIn delay={200}>
-             <p className="text-white/70 text-lg max-w-xl mb-10 leading-relaxed">
-  I build{" "}
-  <span className="text-white/90 font-medium">
-    scalable, high-performance
-  </span>{" "}
-  web applications with{" "}
-  <span className="relative font-medium text-primary">
-    React
-    <span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-primary/40 rounded"></span>
-  </span>
-  ,{" "}
-  <span className="relative font-medium text-primary">
-    Next.js
-    <span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-primary/40 rounded"></span>
-  </span>{" "}
-  and{" "}
-  <span className="relative font-medium text-primary">
-    modern backend technologies
-    <span className="absolute left-0 -bottom-0.5 w-full h-[2px] bg-primary/40 rounded"></span>
-  </span>
-  , focusing on{" "}
-  <span className="text-white/90 font-medium">
-    clean interfaces
-  </span>{" "}
-  and{" "}
-  <span className="text-white/90 font-medium">
-    real-world usability
-  </span>.
-</p>
-
+              <p className="text-white/70 text-lg max-w-xl mb-10 leading-relaxed">
+                I design and develop{" "}
+                <span className="text-white font-medium">
+                  scalable, high-performance applications
+                </span>{" "}
+                using{" "}
+                <span className="text-primary font-medium">React</span>,{" "}
+                <span className="text-primary font-medium">Next.js</span>{" "}
+                and modern backend systems — focusing on{" "}
+                <span className="text-white font-medium">
+                  UX, performance, and maintainability
+                </span>.
+              </p>
             </FadeIn>
 
             <FadeIn delay={300}>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="inline-flex items-center"
-              >
-                <span className="bg-white text-black px-7 py-3 rounded-xl font-medium hover:bg-white/90 transition">
-                  Get in Touch
-                </span>
-              </button>
+              <div className="flex flex-wrap gap-4">
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="bg-white text-black px-7 py-3 rounded-xl font-medium hover:bg-white/90 transition"
+                >
+                  Hire Me
+                </button>
+
+                <button
+                  onClick={() => scrollToSection("projects")}
+                  className="px-7 py-3 rounded-xl font-medium border border-white/20 text-white/80 hover:bg-white/5 transition"
+                >
+                  View Projects
+                </button>
+              </div>
             </FadeIn>
 
             <FadeIn delay={400}>
@@ -136,57 +87,11 @@ const Hero = () => {
             </FadeIn>
           </div>
 
-          {/* RIGHT COLUMN */}
+          {/* RIGHT */}
           <FadeIn delay={200}>
-            <div className="relative flex justify-center lg:justify-end w-full">
-              <div
-                className="
-                  bg-primary/10
-                  backdrop-blur-xl
-                  border border-primary/30
-                  rounded-[32px]
-                  p-4 sm:p-6
-                  shadow-2xl
-                  w-full max-w-[360px] sm:max-w-[420px] md:max-w-[480px]
-                "
-              >
-                <div className="relative w-full h-[360px] sm:h-[420px] md:h-[480px] rounded-2xl overflow-hidden">
-                  <img
-                    src="./main3.png"
-                    alt="Developer"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40" />
-                </div>
-
-                <div className="flex justify-center flex-wrap gap-4 mt-6">
-                  {[
-                    { Icon: SiReact, color: "text-cyan-400" },
-                    { Icon: SiNextdotjs, color: "text-white" },
-                    { Icon: SiTailwindcss, color: "text-sky-400" },
-                    { Icon: SiNodedotjs, color: "text-green-400" },
-                    { Icon: SiMongodb, color: "text-green-500" },
-                  ].map(({ Icon, color }, i) => (
-                    <div
-                      key={i}
-                      className="
-                        w-12 h-12
-                        flex items-center justify-center
-                        rounded-full
-                        bg-primary/15
-                        border border-primary/30
-                        backdrop-blur-md
-                        transition
-                        hover:bg-primary/25
-                      "
-                    >
-                      <Icon className={`w-6 h-6 ${color}`} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <HeroImageCard />
           </FadeIn>
+
         </div>
       </div>
     </section>
