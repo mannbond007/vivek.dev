@@ -9,18 +9,18 @@ import {
 
 const HeroImageCard = () => {
   return (
-    <div className="relative w-full py-10 max-w-[520px] mx-auto sm:animate-[float_6s_ease-in-out_infinite]">
+    <div className="relative w-full py-14 sm:py-10 max-w-[520px] mx-auto sm:animate-[float_6s_ease-in-out_infinite]">
 
       {/* VERY SUBTLE DEPTH */}
       <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-primary/5 blur-xl opacity-25 pointer-events-none" />
 
       {/* CARD */}
-      <div className="relative rounded-xl sm:rounded-2xl border border-white/15 bg-black/90 backdrop-blur-xl shadow-lg p-3 sm:p-4 overflow-hidden">
+      <div className="relative rounded-3xl sm:rounded-3xl  border border-white/15 bg-black/90 backdrop-blur-xl shadow-lg p-3 sm:p-4 overflow-hidden">
 
         {/* IMAGE (FIXED MOBILE HEIGHT) */}
-        <div className="relative h-[380px] sm:h-[420px] lg:h-[500px] rounded-lg sm:rounded-xl overflow-hidden">
+        <div className="relative h-[380px] sm:h-[420px] lg:h-[500px] rounded-3xl sm:rounded-3xl overflow-hidden">
           <img
-            src="./main3.png"
+            src="./main6.png"
             alt="Developer Preview"
             className="
               w-full h-full

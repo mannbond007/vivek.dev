@@ -73,18 +73,52 @@ const Hero = () => {
               </div>
             </FadeIn>
 
-            <FadeIn delay={400}>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-14">
-                {STATS.map((stat, index) => (
-                  <div key={index}>
-                    <div className="text-2xl text-primary font-mono mb-1">
-                      {stat.value}
-                    </div>
-                    <p className="text-sm text-white/70">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
+
+{/* All the stats goes here */}
+
+           <FadeIn delay={400}>
+  <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
+    {STATS.map((stat, index) => (
+      <div
+        key={index}
+        className="
+          relative
+          rounded-xl
+          px-5 py-6
+          bg-primary/[0.06]
+          backdrop-blur-md
+          border border-primary/20
+          shadow-[0_6px_18px_rgba(0,0,0,0.18)]
+          transition-all duration-300
+          hover:bg-primary/[0.09]
+        "
+      >
+        {/* Value */}
+        <div className="text-2xl font-mono text-primary mb-2">
+          {stat.value}
+        </div>
+
+        {/* Accent underline */}
+        <div
+          className="
+            h-[2px] w-6
+            bg-primary/50
+            mb-2
+            transition-all duration-300
+            hover:w-10
+          "
+        />
+
+        {/* Label */}
+        <p className="text-sm text-white/65 tracking-wide">
+          {stat.label}
+        </p>
+      </div>
+    ))}
+  </div>
+</FadeIn>
+
+            
           </div>
 
           {/* RIGHT */}

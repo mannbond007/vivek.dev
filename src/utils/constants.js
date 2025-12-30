@@ -21,22 +21,23 @@ export const SOCIAL_LINKS = {
 
 export const STATS = [
   {
-    label: "Years of Experience",
+    label: "Years of Hands-on Development",
     value: "3+",
   },
   {
-    label: "Projects Completed",
+    label: "Production-Grade Projects",
     value: "20+",
   },
   {
-    label: "Technologies Used",
+    label: "Technologies & Frameworks",
     value: "15+",
   },
   {
-    label: "Happy Clients",
+    label: "Full-Stack Applications Built",
     value: "10+",
   },
 ];
+
 
 export const ABOUT_STATS = [
     {label: 'Happy Clients', value: '10+'},

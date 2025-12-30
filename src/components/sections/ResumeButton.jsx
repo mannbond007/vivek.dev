@@ -5,7 +5,7 @@ export default function ResumeButton({ onClick, fullWidth = false }) {
       <div
         className={`
           relative group overflow-hidden
-          bg-white/20 p-0.5
+          bg-primary/20 p-0.5
           h-9 ${fullWidth ? "w-full" : "w-28"}
           rounded-md
           transition-all duration-300
@@ -17,14 +17,14 @@ export default function ResumeButton({ onClick, fullWidth = false }) {
           className="
             flex items-center justify-center
             text-white text-sm font-semibold
-            bg-gradient-to-t from-black/60 to-black
+            bg-gradient-to-t from-black/70 to-black
             h-full w-full rounded
           "
         >
           Resume
         </div>
 
-        {/* Glow Effect */}
+        {/* ORIGINAL GLOW — JUST COLOR CHANGED */}
         <div
           className="
             absolute -bottom-12
@@ -34,7 +34,7 @@ export default function ResumeButton({ onClick, fullWidth = false }) {
             blur-xl
             size-14
             rounded-full
-            bg-white/70
+            bg-primary/70
           "
         />
       </div>

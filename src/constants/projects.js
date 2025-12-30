@@ -1,3 +1,6 @@
+import portfolio from "../assets/3d_portfolio.png"
+
+
 // src/constants/projects.js
 import mern from "../assets/mern.png"
 import {
@@ -10,6 +13,7 @@ import {
   SiJavascript,
   SiExpress,
   SiJsonwebtokens,
+  SiFramer,
 } from "react-icons/si";
 
 const projects = [
@@ -30,19 +34,19 @@ const projects = [
   ],
   },
  {
-    title: "MERN Auth System",
-    description:
-      "A secure authentication system with JWT, role-based access control, and email verification.",
-    image: "/projects/auth.png",
-    githubUrl: "https://github.com/yourname/mern-auth",
-    liveUrl: "https://auth-demo.com",
-    techStack: [
-      { label: "React", icon: SiReact },
-      { label: "Node", icon: SiNodedotjs },
-      { label: "MongoDB", icon: SiMongodb },
-      { label: "Tailwind", icon: SiTailwindcss },
-    ],
-  },
+  title: "Modern 3D portfolio Website",
+  description:
+    "A modern authentication experience with secure sign-in, role-based access, protected routes, and smooth UI interactions, designed for full-stack web applications.",
+  image: portfolio,
+  githubUrl: "https://github.com/mannbond007/MacOs_Portfolio",
+  liveUrl: "https://mac-os-portfolio-coral.vercel.app/",
+  techStack: [
+    { label: "React.js", icon: SiReact },
+    { label: "Node.js", icon: SiNodedotjs },
+    { label: "Tailwind CSS", icon: SiTailwindcss },
+    { label: "Framer Motion", icon: SiFramer }, // import SiFramer
+  ],
+},
   {
     title: "Medical Tourism Platform",
     description:
