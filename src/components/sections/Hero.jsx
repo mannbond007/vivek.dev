@@ -13,7 +13,6 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
           {/* LEFT */}
           <div>
             <FadeIn delay={0}>
@@ -29,29 +28,29 @@ const Hero = () => {
 
             <FadeIn delay={100}>
               <h1 className="text-[36px] sm:text-5xl lg:text-6xl font-semibold text-white leading-tight mb-6">
-                Building{" "}
-                <span className="text-primary">Production-Ready</span>{" "}
-                Web Products
-                <br />
-                <span className="text-white/60 text-3xl">
-                  not just side projects
-                </span>
+                Building <span className="text-primary">Scalable</span> and{" "}
+                <span className="text-primary">Modern</span> Web Products
               </h1>
             </FadeIn>
 
             <FadeIn delay={200}>
               <p className="text-white/70 text-lg max-w-xl mb-10 leading-relaxed">
-                I design and develop{" "}
+                I design and build{" "}
                 <span className="text-white font-medium">
-                  scalable, high-performance applications
+                  reliable, scalable web applications
                 </span>{" "}
-                using{" "}
-                <span className="text-primary font-medium">React</span>,{" "}
-                <span className="text-primary font-medium">Next.js</span>{" "}
-                and modern backend systems — focusing on{" "}
+                using <span className="text-primary font-medium">React</span>,{" "}
+                <span className="text-primary font-medium">Next.js</span>,{" "}
+                <span className="text-primary font-medium">TypeScript</span> and
+                modern backend technologies like{" "}
+                <span className="text-primary font-medium">Node.js</span> and{" "}
+                <span className="text-primary font-medium">REST APIs</span>,
+                with a strong focus on{" "}
                 <span className="text-white font-medium">
-                  UX, performance, and maintainability
-                </span>.
+                  usability, performance, clean architecture, and maintainable
+                  code
+                </span>
+                .
               </p>
             </FadeIn>
 
@@ -73,15 +72,14 @@ const Hero = () => {
               </div>
             </FadeIn>
 
+            {/* All the stats goes here */}
 
-{/* All the stats goes here */}
-
-           <FadeIn delay={400}>
-  <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
-    {STATS.map((stat, index) => (
-      <div
-        key={index}
-        className="
+            <FadeIn delay={400}>
+              <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
+                {STATS.map((stat, index) => (
+                  <div
+                    key={index}
+                    className="
           relative
           rounded-xl
           px-5 py-6
@@ -92,40 +90,37 @@ const Hero = () => {
           transition-all duration-300
           hover:bg-primary/[0.09]
         "
-      >
-        {/* Value */}
-        <div className="text-2xl font-mono text-primary mb-2">
-          {stat.value}
-        </div>
+                  >
+                    {/* Value */}
+                    <div className="text-2xl font-mono text-primary mb-2">
+                      {stat.value}
+                    </div>
 
-        {/* Accent underline */}
-        <div
-          className="
+                    {/* Accent underline */}
+                    <div
+                      className="
             h-[2px] w-6
             bg-primary/50
             mb-2
             transition-all duration-300
             hover:w-10
           "
-        />
+                    />
 
-        {/* Label */}
-        <p className="text-sm text-white/65 tracking-wide">
-          {stat.label}
-        </p>
-      </div>
-    ))}
-  </div>
-</FadeIn>
-
-            
+                    {/* Label */}
+                    <p className="text-sm text-white/65 tracking-wide">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
           </div>
 
           {/* RIGHT */}
           <FadeIn delay={200}>
             <HeroImageCard />
           </FadeIn>
-
         </div>
       </div>
     </section>
