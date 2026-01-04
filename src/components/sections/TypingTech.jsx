@@ -7,7 +7,12 @@ const TECH_STACK = [
   "Node.js",
   "MongoDB",
   "Tailwind CSS",
+  "PostgreSQL",
   "TypeScript",
+  "HTML5",
+  "JavaScript",
+  "SCSS",
+
 ];
 
 const TypingTech = () => {
@@ -48,6 +53,8 @@ const TypingTech = () => {
         min-w-[90px] sm:min-w-[130px] lg:min-w-[150px]
         font-mono
         text-primary
+        whitespace-nowrap
+        
       "
     >
       {text}
