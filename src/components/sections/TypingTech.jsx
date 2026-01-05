@@ -7,6 +7,7 @@ const TECH_STACK = [
   "Node.js",
   "MongoDB",
   "Tailwind CSS",
+  "Shadcn UI",
   "PostgreSQL",
   "TypeScript",
   "HTML5",
