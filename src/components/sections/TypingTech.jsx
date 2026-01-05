@@ -49,14 +49,15 @@ const TypingTech = () => {
   return (
     <span
       className="
-  inline-block
-  min-w-[90px] sm:min-w-[130px] lg:min-w-[150px]
-  font-mono
-  text-primary
-  whitespace-nowrap
-  flex-shrink-0
-"
-
+    inline-block
+    w-[160px] sm:w-auto
+    min-w-[160px] sm:min-w-[130px] lg:min-w-[150px]
+    font-mono
+    text-primary
+    whitespace-nowrap
+    flex-shrink-0
+    text-left
+  "
     >
       {text}
       <motion.span
