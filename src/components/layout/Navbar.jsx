@@ -65,8 +65,8 @@ const Navbar = () => {
             <a
               href="#contact"
               className="
-                px-6 py-2.5
-                rounded-xl
+                px-8 py-2
+                rounded
                 bg-white text-black
                 text-sm font-medium
                 hover:bg-white/90

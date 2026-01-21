@@ -58,14 +58,14 @@ const Hero = () => {
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="bg-white text-black px-7 py-3 rounded-xl font-medium hover:bg-white/90 transition"
+                  className="bg-white text-black px-8 py-2 rounded font-medium hover:bg-white/90 transition cursor-pointer"
                 >
                   Hire Me
                 </button>
 
                 <button
                   onClick={() => scrollToSection("projects")}
-                  className="px-7 py-3 rounded-xl font-medium border border-white/20 text-white/80 hover:bg-white/5 transition"
+                  className="px-8 py-2 rounded font-medium border border-white/20 text-white/80 hover:bg-white/5 transition cursor-pointer"
                 >
                   View Projects
                 </button>
