@@ -45,7 +45,7 @@ const Projects = () => {
                 key={index}
                 className="
                   group
-                  rounded-[32px]
+                  rounded-2xl
                   border border-primary/25
                   bg-gradient-to-br from-primary/10 to-black/70
                   backdrop-blur-xl
