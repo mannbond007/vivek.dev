@@ -1,29 +1,44 @@
-import React from "react";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
 
 const Footer = () => {
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTopBtn(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="relative bg-black border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          
           {/* Brand */}
           <div>
             <a href="#" className="group">
-            <span
-              className="
-                font-mono text-lg md:text-xl font-semibold
-                text-gray-300
-                tracking-wider
-                transition-colors duration-300
-                group-hover:text-white
-              "
-            >
-             <span className="text-primary ">$</span> Vivek_
-            </span>
-          </a>
+              <span
+                className="
+                  font-mono text-lg md:text-xl font-semibold
+                  text-gray-300 tracking-wider
+                  transition-colors duration-300
+                  group-hover:text-white
+                "
+              >
+                <span className="text-primary">$</span> Vivek_
+              </span>
+            </a>
 
             <p className="text-white/60 mt-2 text-sm leading-relaxed max-w-sm">
               Full-stack developer crafting modern, scalable, and meaningful
@@ -48,8 +63,7 @@ const Footer = () => {
                     href={link.href}
                     className="
                       group relative inline-block
-                      text-white/60
-                      transition
+                      text-white/60 transition
                       hover:text-white
                     "
                   >
@@ -115,6 +129,27 @@ const Footer = () => {
           </span>
         </div>
       </div>
+
+      {/* Scroll To Top Button */}
+      {showTopBtn && (
+        <button
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+          className="
+            fixed bottom-6 right-6 z-50
+            w-12 h-12
+            rounded-full
+            bg-primary text-black
+            flex items-center justify-center
+            shadow-lg
+            hover:scale-110
+            transition
+            cursor-pointer
+          "
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
+      )}
     </footer>
   );
 };
