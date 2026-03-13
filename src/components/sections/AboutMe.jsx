@@ -1,5 +1,7 @@
 import React from "react";
-import FadeIn from "../animations/FadeIn";
+import { motion } from "framer-motion";
+import AnimatedSection from "../animations/AnimatedSection";
+import StaggerContainer, { staggerItem } from "../animations/StaggerContainer";
 
 import frontEnd from "../../assets/fe.jpg";
 import react from "../../assets/react.png";
@@ -72,97 +74,54 @@ const items = [
 
 const AboutMe = () => {
   return (
-    <section className="relative bg-black py-28">
+    <AnimatedSection id="about" className="relative bg-black py-28">
       <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-20 text-center max-w-3xl mx-auto">
+          <motion.div variants={staggerItem} className="inline-flex items-center gap-2 px-6 py-2 text-sm md:text-base tracking-widest uppercase text-primary bg-primary/10 border border-primary/30 rounded-full justify-center">
+            <Layers className="w-4 h-4 md:w-5 md:h-5" />
+            What I Work With
+          </motion.div>
 
-        {/* Header */}
-        <FadeIn delay={0}>
-          <div className="mb-20 text-center max-w-3xl mx-auto">
-            <span
-              className="
-                inline-flex items-center gap-2
-                px-6 py-2
-                text-sm md:text-base
-                tracking-widest uppercase
-                text-primary
-                bg-primary/10
-                border border-primary/30
-                rounded-full
-              "
+          <motion.h2 variants={staggerItem} className="text-3xl md:text-4xl text-white mt-6 font-medium">
+            Technical expertise & focus areas
+          </motion.h2>
+
+          <motion.p variants={staggerItem} className="text-white/60 mt-5 text-base leading-relaxed">
+            My skill set is shaped around building real-world applications — combining clean frontend experiences with reliable backend systems. I focus on maintainability, performance, and long-term scalability.
+          </motion.p>
+        </div>
+
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map((item, i) => (
+            <motion.div
+              key={i}
+              variants={staggerItem}
+              className={`${item.col} relative rounded-3xl border border-primary/25 bg-gradient-to-br from-primary/10 to-black/50 backdrop-blur-xl p-7`}
             >
-              <Layers className="w-4 h-4 md:w-5 md:h-5" />
-              What I Work With
-            </span>
-
-            <h2 className="text-3xl md:text-4xl text-white mt-6 font-medium">
-              Technical expertise & focus areas
-            </h2>
-
-            <p className="text-white/60 mt-5 text-base leading-relaxed">
-              My skill set is shaped around building real-world applications —
-              combining clean frontend experiences with reliable backend
-              systems. I focus on maintainability, performance, and long-term
-              scalability.
-            </p>
-          </div>
-        </FadeIn>
-
-        {/* Cards */}
-        <FadeIn delay={100}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {items.map((item, i) => (
-              <div
-                key={i}
-                className={`${item.col}
-                  relative
-                  rounded-3xl
-                  border border-primary/25
-                  bg-gradient-to-br from-primary/10 to-black/50
-                  backdrop-blur-xl
-                  p-7
-                `}
-              >
-                {/* Image */}
-                <div className="relative w-full h-52 md:h-56 rounded-2xl overflow-hidden mb-6">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                </div>
-
-                {/* Icons (THIS IS THE IMPORTANT PART) */}
-                <div className="mb-4 flex items-center gap-2">
-                  {item.icons.map((Icon, idx) => (
-                    <div
-                      key={idx}
-                      className="
-                        w-11 h-11
-                        flex items-center justify-center
-                        rounded-full
-                        bg-primary/20
-                        border border-primary/30
-                      "
-                    >
-                      <Icon className="w-5 h-5 text-primary" />
-                    </div>
-                  ))}
-                </div>
-
-                {/* Text */}
-                <h3 className="text-white text-lg font-medium mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
+              <div className="relative w-full h-52 md:h-56 rounded-2xl overflow-hidden mb-6">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               </div>
-            ))}
-          </div>
-        </FadeIn>
+
+              <div className="mb-4 flex items-center gap-2">
+                {item.icons.map((Icon, idx) => (
+                  <motion.div
+                    key={idx}
+                    variants={staggerItem}
+                    className="w-11 h-11 flex items-center justify-center rounded-full bg-primary/20 border border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,197,94,0.3)]"
+                  >
+                    <Icon className="w-5 h-5 text-primary" />
+                  </motion.div>
+                ))}
+              </div>
+
+              <h3 className="text-white text-lg font-medium mb-2">{item.title}</h3>
+              <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
+            </motion.div>
+          ))}
+        </StaggerContainer>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

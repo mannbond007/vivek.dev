@@ -1,86 +1,204 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   SiReact,
   SiNextdotjs,
-  SiTailwindcss,
+  SiTypescript,
   SiNodedotjs,
   SiMongodb,
+  SiDocker,
+  SiExpress,
+  SiGit
 } from "react-icons/si";
+
+const techStack = [
+  { name: "React", icon: SiReact, color: "text-cyan-400" },
+  { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+  { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
+  { name: "Node.js", icon: SiNodedotjs, color: "text-green-400" },
+  { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+  { name: "Docker", icon: SiDocker, color: "text-sky-400" },
+  { name: "Express", icon: SiExpress, color: "text-gray-300" },
+  { name: "Git & GitHub", icon: SiGit, color: "text-orange-500" },
+];
+
+const codeLines = [
+  <>
+    <span className="text-purple-400">import</span>{" "}
+    <span className="text-cyan-400">React</span>{" "}
+    <span className="text-purple-400">from</span>{" "}
+    <span className="text-green-400">"react"</span>;
+  </>,
+
+  <>
+    <span className="text-purple-400">import</span>{" "}
+    <span className="text-cyan-400">useProjects</span>{" "}
+    <span className="text-purple-400">from</span>{" "}
+    <span className="text-green-400">"@/hooks/useProjects"</span>;
+  </>,
+
+  "",
+
+  <>
+    <span className="text-purple-400">const</span>{" "}
+    <span className="text-yellow-400">Developer</span>{" "}
+    = () {"=>"} {"{"}
+  </>,
+
+  <>
+    {"  "}
+    <span className="text-purple-400">const</span>{" "}
+    {"{"}
+    <span className="text-white">projects</span>
+    {"}"} ={" "}
+    <span className="text-cyan-400">useProjects</span>();
+  </>,
+
+  <>
+    {"  "}
+    <span className="text-gray-500">
+      // build scalable and maintainable systems
+    </span>
+  </>,
+
+  "",
+
+  <>
+    {"  "}
+    <span className="text-purple-400">return</span>{" "}
+    {"("}
+  </>,
+
+  <>
+    {"    "}
+    <span className="text-pink-400">&lt;Portfolio</span>
+  </>,
+
+  <>
+    {"      "}
+    <span className="text-cyan-400">developer</span>=
+    <span className="text-green-400">"Vivek Kumar"</span>
+  </>,
+
+  <>
+    {"      "}
+    <span className="text-cyan-400">stack</span>=
+    <span className="text-yellow-300">["React","Node","MongoDB"]</span>
+  </>,
+
+  <>
+    {"    "}
+    <span className="text-pink-400">/&gt;</span>
+  </>,
+
+  <>
+    {"  "}
+    {")"}
+  </>,
+
+  <>
+    {"}"}
+  </>
+];
 
 const HeroImageCard = () => {
   return (
-    <div className="relative w-full py-14 sm:py-10 max-w-[520px] mx-auto sm:animate-[float_6s_ease-in-out_infinite]">
+    <div className="relative w-full flex justify-center">
 
-      {/* VERY SUBTLE DEPTH */}
-      <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-primary/5 blur-xl opacity-25 pointer-events-none" />
-
-      {/* CARD */}
-      <div className="relative rounded-3xl sm:rounded-3xl  border border-white/15 bg-black/90 backdrop-blur-xl shadow-lg p-3 sm:p-4 overflow-hidden">
-
-        {/* IMAGE (FIXED MOBILE HEIGHT) */}
-        <div className="relative h-[380px] sm:h-[420px] lg:h-[500px] rounded-3xl sm:rounded-3xl overflow-hidden">
-          <img
-            src="./main6.png"
-            alt="Developer Preview"
-            className="
-              w-full h-full
-              object-cover object-center
-              contrast-95 saturate-90
-            "
-          />
-
-          {/* INNER SHADOW */}
-          <div className="absolute inset-0 shadow-[inset_0_-40px_60px_rgba(0,0,0,0.55)]" />
-
-          {/* SOFT OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
-        </div>
-
-        {/* ICON DOCK (THEME MATCHED) */}
-        <div className="mt-4 sm:mt-5 flex justify-center">
-          <div
-            className="
-              flex items-center gap-3 sm:gap-4
-              px-3 py-2
-              rounded-full
-              bg-primary/5
-              border border-primary/20
-              backdrop-blur-md
-            "
-          >
-            {[
-              { Icon: SiReact, color: "text-cyan-400/90" },
-              { Icon: SiNextdotjs, color: "text-white/85" },
-              { Icon: SiTailwindcss, color: "text-sky-400/90" },
-              { Icon: SiNodedotjs, color: "text-green-400/90" },
-              { Icon: SiMongodb, color: "text-green-500/90" },
-            ].map(({ Icon, color }, i) => (
-              <div
-                key={i}
-                className="
-                  w-9 h-9 sm:w-10 sm:h-10
-                  flex items-center justify-center
-                  rounded-full
-                  bg-primary/10
-                  border border-primary/20
-                "
-              >
-                <Icon className={`w-4.5 h-4.5 sm:w-5 sm:h-5 ${color}`} />
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* glow background */}
+      <div className="pointer-events-none absolute inset-0 flex justify-center items-center">
+        <div className="h-[460px] w-[650px] max-w-[90vw] rounded-[30px]
+        bg-gradient-to-br from-cyan-500/20 via-blue-500/10 to-transparent blur-3xl" />
       </div>
 
-      {/* FLOAT ANIMATION */}
-      <style>
-        {`
-          @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-          }
-        `}
-      </style>
+      <motion.div
+        initial={{ opacity: 0, y: 30, scale: 0.96 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        whileHover={{ scale: 1.02 }}
+        className="relative w-[min(650px,92vw)] rounded-2xl
+        border border-white/15 bg-black/70 backdrop-blur-xl
+        shadow-[0_25px_60px_rgba(0,0,0,0.55)] overflow-hidden"
+      >
+
+        <motion.div
+          animate={{ y: [-8, 8] }}
+          transition={{
+            duration: 8,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "mirror"
+          }}
+          className="p-7 will-change-transform"
+        >
+
+          {/* window dots */}
+          <div className="flex items-center gap-2 mb-5">
+            <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
+            <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
+            <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
+          </div>
+
+          {/* code editor */}
+          <div className="h-[340px] sm:h-[380px] lg:h-[420px] overflow-hidden rounded-xl border border-white/10 bg-[#0b1220]">
+
+            <div className="h-full p-7 font-mono text-sm text-white/90 leading-6 grid grid-cols-[40px_1fr]">
+
+              {/* line numbers */}
+              <div className="text-slate-500 text-right pr-3 select-none">
+                {codeLines.map((_, i) => (
+                  <div key={i}>{i + 1}</div>
+                ))}
+              </div>
+
+              {/* code */}
+              <div>
+                {codeLines.map((line, i) => (
+                  <div key={i} className="whitespace-pre">
+                    {line}
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* tech stack */}
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+
+            {techStack.map((tech, i) => {
+              const Icon = tech.icon;
+
+              return (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                  className="
+                  flex items-center gap-2
+                  px-3 py-1.5
+                  rounded-lg
+                  border border-white/10
+                  bg-white/5
+                  backdrop-blur-md
+                  text-sm text-white/80
+                  hover:border-cyan-400/40
+                  hover:bg-white/10
+                  transition
+                  "
+                >
+                  <Icon className={`text-lg ${tech.color}`} />
+                  <span>{tech.name}</span>
+                </motion.div>
+              );
+            })}
+
+          </div>
+
+        </motion.div>
+      </motion.div>
+
     </div>
   );
 };

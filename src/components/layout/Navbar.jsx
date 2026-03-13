@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import ResumeButton from "../sections/ResumeButton";
 
@@ -12,11 +12,25 @@ const NAV_LINKS = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
+        scrolled
+          ? "bg-black/75 backdrop-blur-xl border-b border-white/15 shadow-lg"
+          : "bg-transparent border-transparent"
+      }`}
+    >
       {/* Glass Navbar */}
-      <div className="relative bg-black/50 backdrop-blur-xl border-b border-white/10">
+      <div className="relative">
         {/* subtle glow line */}
         <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
