@@ -2,26 +2,40 @@ import { MessageSquareQuote } from "lucide-react";
 import React from "react";
 
 const testimonials = [
-  {
-    image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=200",
-    name: "Briar Martin",
+    {
+    image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=200",
+    name: "Rahul Sharma",
     role: "Product Manager",
     quote:
       "Vivek writes clean, scalable code and has a strong eye for UI detail.",
   },
   {
-    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200",
-    name: "Avery Johnson",
+    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=200",
+    name: "Ananya Verma",
     role: "Startup Founder",
     quote:
       "Execution was fast, communication was clear, and quality was top-notch.",
   },
   {
-    image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200",
-    name: "Jordan Lee",
+    image: "https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=200",
+    name: "Arjun Mehta",
     role: "Frontend Lead",
     quote:
       "Modern UI, solid architecture, and great understanding of React.",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1615109398623-88346a601842?w=200",
+    name: "Priya Kapoor",
+    role: "UI/UX Designer",
+    quote:
+      "Attention to detail and user experience thinking really stands out.",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=200",
+    name: "Karan Singh",
+    role: "Tech Lead",
+    quote:
+      "Strong problem-solving skills and excellent command over full-stack development.",
   },
 ];
 
