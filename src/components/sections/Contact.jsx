@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
 import { motion } from "framer-motion";
 import AnimatedSection from "../animations/AnimatedSection";
 import { staggerItem } from "../animations/StaggerContainer";
@@ -10,9 +11,44 @@ import {
   Twitter,
   Send,
   MessageCircle,
+  Loader2,
+  CheckCircle2,
 } from "lucide-react";
 
 const Contact = () => {
+  const formRef = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(false);
+
+    emailjs
+      .sendForm(
+        'service_0uyqdgo',
+        'template_rvsxw72',
+        formRef.current,
+        'ZJFxPFaeLNESyQdX8'
+      )
+      .then(
+        () => {
+          setIsSubmitting(false);
+          setSuccess(true);
+          formRef.current.reset();
+          setTimeout(() => setSuccess(false), 5000);
+        },
+        (err) => {
+          setIsSubmitting(false);
+          setError(true);
+          console.error('FAILED...', err.text);
+          setTimeout(() => setError(false), 5000);
+        }
+      );
+  };
+
   return (
     <AnimatedSection id="contact" className="relative bg-black py-28 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6">
@@ -69,13 +105,28 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          <motion.form variants={staggerItem} className="relative rounded-3xl border border-primary/25 bg-gradient-to-br from-primary/10 to-black/60 backdrop-blur-xl p-8">
+          <motion.form ref={formRef} onSubmit={handleSubmit} variants={staggerItem} className="relative rounded-3xl border border-primary/25 bg-gradient-to-br from-primary/10 to-black/60 backdrop-blur-xl p-8">
             <div className="absolute -inset-px rounded-3xl bg-primary/20 blur-xl opacity-30 pointer-events-none" />
+            
+            {/* Hidden field for time variable used in template */}
+            <input type="hidden" name="time" value={new Date().toLocaleString()} />
+            
             <div className="relative space-y-6">
+              <div>
+                <label className="block text-sm text-white/70 mb-2">Your Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                  className="w-full px-4 py-3 rounded-xl bg-black/40 border border-primary/30 text-white placeholder:text-white/40 focus:outline-none focus:border-primary"
+                />
+              </div>
               <div>
                 <label className="block text-sm text-white/70 mb-2">Your Email</label>
                 <input
                   type="email"
+                  name="email"
                   required
                   placeholder="you@example.com"
                   className="w-full px-4 py-3 rounded-xl bg-black/40 border border-primary/30 text-white placeholder:text-white/40 focus:outline-none focus:border-primary"
@@ -83,10 +134,26 @@ const Contact = () => {
               </div>
               <div>
                 <label className="block text-sm text-white/70 mb-2">Message</label>
-                <textarea rows="5" required placeholder="Tell me about your project..." className="w-full px-4 py-3 rounded-xl bg-black/40 border border-primary/30 text-white placeholder:text-white/40 focus:outline-none focus:border-primary resize-none" />
+                <textarea name="message" rows="5" required placeholder="Tell me about your project..." className="w-full px-4 py-3 rounded-xl bg-black/40 border border-primary/30 text-white placeholder:text-white/40 focus:outline-none focus:border-primary resize-none" />
               </div>
-              <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.15 }} type="submit" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-black rounded-xl font-medium">
-                <Send className="w-4 h-4" /> Send Message
+              <motion.button 
+                disabled={isSubmitting || success}
+                whileHover={{ scale: 1.02 }} 
+                whileTap={{ scale: 0.98 }} 
+                transition={{ duration: 0.15 }} 
+                type="submit" 
+                className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-colors ${
+                  success ? "bg-green-500 text-white" : error ? "bg-red-500 text-white" : "bg-primary text-black hover:bg-primary/90"
+                } disabled:opacity-70`}
+              >
+                {isSubmitting ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : success ? (
+                  <CheckCircle2 className="w-4 h-4" />
+                ) : (
+                  <Send className="w-4 h-4" />
+                )}
+                {isSubmitting ? 'Sending...' : success ? 'Message Sent!' : error ? 'Failed to send' : 'Send Message'}
               </motion.button>
             </div>
           </motion.form>

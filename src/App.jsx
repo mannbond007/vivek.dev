@@ -1,7 +1,6 @@
 import Navbar from "./components/layout/Navbar";
 import AboutMe from "./components/sections/AboutMe";
 import Certifications from "./components/sections/Certifications";
-import Certification from "./components/sections/Certifications";
 import Contact from "./components/sections/Contact";
 import Experience from "./components/sections/Experience ";
 import Footer from "./components/sections/Footer";

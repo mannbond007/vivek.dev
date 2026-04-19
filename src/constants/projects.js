@@ -1,7 +1,6 @@
 import portfolio from "../assets/3d_portfolio.png"
-
-
-// src/constants/projects.js
+import medicalTourism from "../assets/medical_tourism.jpg"
+import studyPlanner from "../assets/ExamPrep.png"
 import mern from "../assets/mern.png"
 import {
   SiReact,
@@ -51,7 +50,7 @@ const projects = [
     title: "Medical Tourism Platform",
     description:
       "A full-stack platform helping international patients connect with hospitals and doctors in India.",
-    image: "/projects/medical.png",
+    image: medicalTourism,
     githubUrl: "https://github.com/yourname/medical-tourism",
     liveUrl: "https://medical-demo.com",
     techStack: [
@@ -65,7 +64,7 @@ const projects = [
     title: "ExamPrep Planner",
     description:
       "A smart exam preparation planner with progress tracking, timers, and PDF export.",
-    image: "/projects/examprep.png",
+    image: studyPlanner,
     githubUrl: "https://github.com/yourname/examprep",
     liveUrl: "https://examprep-demo.com",
     techStack: [
