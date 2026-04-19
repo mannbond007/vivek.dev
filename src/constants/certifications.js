@@ -32,7 +32,7 @@ const certifications = [
     year: "2023",
     description:
       "Core networking concepts including OSI model, TCP/IP, routing, switching, and network security basics.",
-    link: "https://www.udemy.com/certificate/your-link-here",
+    link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-dadf8ca3-a875-49c7-bf7b-6da8942177ec.pdf",
     tags: ["Networking", "TCP/IP", "OSI", "Security"],
   },
   {
