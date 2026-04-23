@@ -118,7 +118,7 @@ const Contact = () => {
                   type="text"
                   name="name"
                   required
-                  placeholder="John Doe"
+                  placeholder="Your Name"
                   className="w-full px-4 py-3 rounded-xl bg-black/40 border border-primary/30 text-white placeholder:text-white/40 focus:outline-none focus:border-primary"
                 />
               </div>
